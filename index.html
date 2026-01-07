@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rfreshselect Grocery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">R.Fresh Grocery Mart</div>
+    <input type="text" id="search" placeholder="Search for products...">
+    <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+  </header>
+
+  <!-- PRODUCTS -->
+  <main>
+    <div id="products" class="products-container"></div>
+  </main>
+
+  <!-- CART -->
+  <div id="cart" class="cart">
+    <div class="cart-header">
+      <h2>Cart</h2>
+      <span class="close-cart" onclick="toggleCart()">X</span>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+      <h3>Total: ₹<span id="total">0</span></h3>
+
+      <div class="checkout">
+        <h3>Customer Details</h3>
+        <input type="text" id="cust-name" placeholder="Your Name" required>
+        <textarea id="cust-address" placeholder="Delivery Address" required></textarea>
+        <input type="tel" id="cust-phone" placeholder="Mobile Number" required>
+        <button onclick="purchase()">Purchase</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <!-- ADMIN ADD PRODUCT -->
+<section id="admin-panel" style="display:none;">
+  <h2>Admin: Add Product</h2>
+ <form id="addForm">
+  <input type="text" name="name" placeholder="Product Name" required>
+  <input type="number" name="mrp" placeholder="MRP" required>
+  <input type="number" name="price" placeholder="Selling Price" required>
+  <input type="file" name="img" accept="image/png" required>
+  <button>Add Product</button>
+</form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>R.Fresh Grocery Mart</h3>
+      <p>Fresh groceries delivered to your doorstep. Quality, freshness & trust.</p>
+    </div>
+
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Admin</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h4>Contact Us</h4>
+      <p>📞 +91 6397149766</p>
+      <p>📍 India</p>
+      <p>✉️ support@rfreshselect.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 R.Fresh Grocery Mart | All Rights Reserved
+  </div>
+</footer>
+
+
+
+  <!-- EMAILJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("Lv0qsO2rmUvVUAtah"); // your EmailJS public key
+    })();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
